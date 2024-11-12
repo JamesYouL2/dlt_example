@@ -7,6 +7,3 @@ dlthub_telemetry = true
 
 [sources.chess]
 config_int = 0 # please set me up!
-
-[destination.filesystem]
-kwargs = '{"auto_mkdir": true}'

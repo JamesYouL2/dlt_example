@@ -10,7 +10,6 @@ def load_players_games_example(start_month: str, end_month: str) -> None:
         pipeline_name="chess_pipeline",
         destination="databricks",
         dataset_name="chess_players_games_data",
-        staging=dlt.destinations.filesystem("dlt_data")
     )
     # create the data source by providing a list of players and start/end month in YYYY/MM format
     data = source(
@@ -30,7 +29,6 @@ def load_players_online_status() -> None:
         pipeline_name="chess_pipeline",
         destination="databricks",
         dataset_name="chess_players_games_data",
-        staging=dlt.destinations.filesystem("dlt_data")
     )
     data = source(["magnuscarlsen", "vincentkeymer", "dommarajugukesh", "rpragchess"])
     info = pipeline.run(data.with_resources("players_online_status"))
